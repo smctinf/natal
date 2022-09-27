@@ -1,11 +1,30 @@
 from django.shortcuts import render
 
+from natal.models import *
+
 # Create your views here.
+
+
 def index(req):
-    return render(req, "natal/index.html")
-    
+    context = {
+        'parceiros': Parceiro.objects.all(),
+        'eventos': Evento.objects.all(),
+        'testemonios': Testemonio.objects.all(),
+        'galeria_images': Galeria.objects.all(),
+    }
+
+    return render(req, "natal/index.html", context)
+
+
 def sobre(req):
-    return render(req, "natal/sobre.html")
+    context = {
+        'parceiros': Parceiro.objects.all(),
+    }
+    return render(req, "natal/sobre.html", context)
+
 
 def casaDoPapaiNoel(req):
-    return render(req, "natal/casaDoPapaiNoel.html")
+    context = {
+        'parceiros': Parceiro.objects.all(),
+    }
+    return render(req, "natal/casaDoPapaiNoel.html", context)

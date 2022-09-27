@@ -11,6 +11,8 @@ function draw_floco(floco) {
 }
 
 function animacao() {
+  requestAnimationFrame(animacao);
+
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   for (let floco of flocosDeNeve) {
     draw_floco(floco);
@@ -24,8 +26,6 @@ function animacao() {
       floco.x = Math.random() * canvas.width;
     }
   }
-
-  requestAnimationFrame(animacao);
 }
 
 window.addEventListener("resize", () => resize_canvas(canvas));
@@ -33,20 +33,16 @@ window.addEventListener("resize", () => resize_canvas(canvas));
 function resize_canvas(canvas) {
   canvas.height = document.documentElement.scrollHeight;
   canvas.width = window.innerWidth;
-
-
 }
 
-window.onload = () => {
   resize_canvas(canvas);
-  flocosDeNeve = []
-  for (let i = 0; i < canvas.width/6; i++) {
+  flocosDeNeve = [];
+  for (let i = 0; i < canvas.width / 6; i++) {
     flocosDeNeve.push({
       x: Math.random() * canvas.width,
-      y: Math.random() * (canvas.height),
+      y: Math.random() * canvas.height,
       i: Math.random() * Math.PI * 2,
       r: Math.random() + 1.6,
     });
   }
   animacao();
-};

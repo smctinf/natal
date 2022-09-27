@@ -5,6 +5,7 @@
 src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"
 defer
 ></script>
+
 <script src="/static/js/scripts.js" defer></script>
 <script src="/static/js/neve.js" defer></script>
 <script src="/static/js/carousel.js" defer></script>
@@ -16,7 +17,7 @@ defer
 {% block main %}
 
 <main>
-    <!-- <canvas class="neve"></canvas> !-->
+    <canvas class="neve"></canvas>
 
   <div class="hero">
     <img class="banner" src="/static/imgs/banner2.png" />
@@ -53,57 +54,29 @@ defer
       <button id="backButton"><img src="/static/imgs/arrrow.svg"/></button>
       <button id="nextButton"><img src="/static/imgs/arrrow.svg"/></button>
     </div>
-    <div class="slide-item slide-to-right"><img src="/static/imgs/02122021-DSC_0080.jpg"></div>
-    <div class="slide-item slide-to-right"><img src="/static/imgs/11122021-DSC_0036.jpg" /></div>
-    <div class="slide-item active-slide"><img src="/static/imgs/02122021-DSC_0055.jpg" /></div>
-    <div class="slide-item slide-to-right"><img src="/static/imgs/16122021-DSC_0041.jpg" /></div>
-    <div class="slide-item slide-to-right"><img src="/static/imgs/01012012-DSCN0060.jpg" /></div>
+    {% for galeria_image in galeria_images %}
+      <div class="slide-item active-slide"><img src="{{galeria_image.image.url}}"></div>
+    {% endfor %}
+
   </div>
 
   <div class="py-5">
     <div class="row quotes">
-      <div class="col">
+      {% for testemonio in testemonios %}
+
+      <div class="col testemonio">
         <figure>
           <blockquote class="blockquote">
-            <p>
-              A well-known quote, contained in a blockquote element. Lorem,
-              ipsum dolor sit amet consectetur adipisicing elit.
-              Repudiandae, eius? Esse, error hic?
-            </p>
+            <p>{{testemonio.comentario}}</p>
           </blockquote>
           <figcaption class="blockquote-footer">
-            Someone famous in <cite title="Source Title">Source Title</cite>
+            <cite title="Source Title">{{testemonio.autor}}</cite>
           </figcaption>
         </figure>
       </div>
-      <div class="col">
-        <figure>
-          <blockquote class="blockquote">
-            <p>
-              A well-known quote, contained in a blockquote element. Lorem,
-              ipsum dolor sit amet consectetur adipisicing elit.
-              Repudiandae, eius? Esse, error hic?
-            </p>
-          </blockquote>
-          <figcaption class="blockquote-footer">
-            Someone famous in <cite title="Source Title">Source Title</cite>
-          </figcaption>
-        </figure>
-      </div>
-      <div class="col">
-        <figure>
-          <blockquote class="blockquote">
-            <p>
-              A well-known quote, contained in a blockquote element. Lorem,
-              ipsum dolor sit amet consectetur adipisicing elit.
-              Repudiandae, eius? Esse, error hic?
-            </p>
-          </blockquote>
-          <figcaption class="blockquote-footer">
-            Someone famous in <cite title="Source Title">Source Title</cite>
-          </figcaption>
-        </figure>
-      </div>
+
+      {% endfor %}
+
     </div>
   </div>
 
@@ -133,50 +106,20 @@ defer
       </li>
     </ul>
     <div class="my-slider">
-      <div class="slider-item">
-        <div class="card-carousel">
-          <img src="/static/imgs/02122021-DSC_0055.jpg" alt="" />
-          <h3>Title 1</h3>
-        </div>
-      </div>
+      {% for evento in eventos %}
 
       <div class="slider-item">
         <div class="card-carousel">
-          <img src="/static/imgs/01012012-DSCN0060.jpg" alt="" />
-          <h3>Title 2</h3>
+          <img src="{{evento.banner.url}}" alt="" />
+          <h3>{{evento.titulo}}</h3>
+          <h4>{{evento.data}}</h4>
+          <p>{{evento.descricao}}</p>
         </div>
+
       </div>
 
-      <div class="slider-item">
-        <div class="card-carousel">
-          <img src="/static/imgs/02122021-DSC_0003.jpg" alt="" />
-          <h3>Title 3</h3>
-        </div>
-      </div>
-      <div class="slider-item">
-        <div class="card-carousel">
-          <img src="/static/imgs/02122021-DSC_0034.jpg" alt="" />
-          <h3>Title 4</h3>
-        </div>
-      </div>
-      <div class="slider-item">
-        <div class="card-carousel">
-          <img src="/static/imgs/02122021-DSC_0080.jpg" alt="" />
-          <h3>Title 5</h3>
-        </div>
-      </div>
-      <div class="slider-item">
-        <div class="card-carousel">
-          <img src="/static/imgs/16122021-DSC_0041.jpg" alt="" />
-          <h3>Title 6</h3>
-        </div>
-      </div>
-      <div class="slider-item">
-        <div class="card-carousel">
-          <img src="/static/imgs/01012012-DSCN0060.jpg" alt="" />
-          <h3>Title 7</h3>
-        </div>
-      </div>
+      {% endfor %}
+
     </div>
   </div>
 </main>

@@ -274,13 +274,13 @@ li .a-footer:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  gap: 16px;
 }
 .parceiros-box-int img {
-  width: 12rem;
+  width: 100%;
 }
 .box-pat {
-  margin: 2vw;
-  padding: 1rem;
+  max-width: 200px;
   display: flex;
   align-items: center
 }
@@ -296,7 +296,22 @@ li .a-footer:hover {
   font-weight: bolder;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
+.testemonio{
+  max-width: 520px;
+}
+.testemonio figure{
+  display: flex;
+  flex-direction: column;
+}
+.testemonio figure figcaption{
+  align-self: flex-start;
+}
+.avatar{
+  border-radius: 50%;
+  border: 3px solid white;
+  width: 72px;
+  height: 72px;
+}
 .NOW{
   top: 50%;
 }
