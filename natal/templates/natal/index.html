@@ -54,6 +54,7 @@ defer
       <button id="backButton"><img src="/static/imgs/arrrow.svg"/></button>
       <button id="nextButton"><img src="/static/imgs/arrrow.svg"/></button>
     </div>
+    
     {% for galeria_image in galeria_images %}
       <div class="slide-item active-slide"><img src="{{galeria_image.image.url}}"></div>
     {% endfor %}
