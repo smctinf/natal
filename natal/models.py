@@ -16,7 +16,7 @@ class Evento(models.Model):
     data=models.DateField(auto_now=False, auto_now_add=False) 
     descricao=models.TextField(max_length=150)
 
-class Testemonio(models.Model):
+class Testemunho(models.Model):
     autor=models.CharField(max_length=50, verbose_name="Nome da pessoa")
     comentario=models.TextField(max_length=150) 
 

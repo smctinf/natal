@@ -9,7 +9,7 @@ def index(req):
     context = {
         'parceiros': Parceiro.objects.all(),
         'eventos': Evento.objects.all(),
-        'testemonios': Testemonio.objects.all(),
+        'testemonios': Testemunho.objects.all(),
         'galeria_images': Galeria.objects.all(),
     }
 
