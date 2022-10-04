@@ -1,5 +1,3 @@
-from tabnanny import verbose
-from tkinter import CASCADE, image_names
 from django.db import models
 from django.contrib.auth.models import User
 
