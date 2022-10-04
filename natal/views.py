@@ -6,7 +6,6 @@ from natal.models import *
 
 
 def index(req):
-    print(Galeria.objects.all()[0].image.url)
     context = {
         'parceiros': Parceiro.objects.all(),
         'eventos': Evento.objects.all(),
