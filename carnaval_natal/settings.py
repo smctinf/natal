@@ -11,13 +11,13 @@ env_vars=load_envars(BASE_DIR)
 
 db_name = env_vars['db_name']
 db_user = env_vars['db_user']
+db_host=env_vars['db_host']
 db_passwd = env_vars['db_pw']
 SECRET_KEY = env_vars['django_secret_key']
-debug_mode = env_vars['debug_mode']
 email_user = env_vars['email_sistema']
 email_pass = env_vars['email_pw']
 
-DEBUG = debug_mode
+DEBUG = env_vars['debug_mode']
 
 ALLOWED_HOSTS = ['*']
 
@@ -72,8 +72,13 @@ WSGI_APPLICATION = 'carnaval_natal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': db_name,
+        'PORT': '',
+
+        'USER': db_user,
+        'PASSWORD': db_passwd,
+        'HOST': db_host
     }
 }
 
