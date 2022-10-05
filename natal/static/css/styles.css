@@ -371,9 +371,9 @@ li .a-footer:hover {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin: 20px auto;
 }
-.icones{
- 
+.icones{ 
   margin: 2rem 0;
   padding: 3rem;
 }
@@ -384,7 +384,9 @@ li .a-footer:hover {
   flex-wrap: wrap;
   gap: 1rem;
   border: 2px solid white;
+  max-width: 60em;
   padding: 1rem;
+  margin: auto;
 
 }
 #dolar-dolar img{
