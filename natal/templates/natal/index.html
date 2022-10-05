@@ -21,14 +21,7 @@ defer
 
   <div class="hero">
     <img class="banner" src="/static/imgs/banner2.png" />
-    <div class="absoluteCenter">
-        <a type="button" href="#eventos" class="button primary">
-          Eventos
-        </a>
-        <a type="button" href="#" class="button secondary">
-          Programação
-        </a>
-      </div>
+    
   </div>
 
   <div class="text-block">
@@ -47,6 +40,14 @@ defer
       Dolor, fugiat. Corporis maxime esse animi quam sunt, nobis impedit
       recusandae, ipsum sint ea, modi quasi labore nihil voluptatum.
     </p>
+    <div class="w-100 d-flex">
+      <!-- <a type="button" href="#eventos" class="button primary">
+        Eventos
+      </a> -->
+      <a type="button" href="#" class="button secondary my-5 mx-auto" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Programação
+      </a>
+    </div>
   </div>
 
   <div class="slideShow" id="galeria">
@@ -125,4 +126,20 @@ defer
   </div>
 </main>
 
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0">          
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-dark text-center">
+          Ainda não é possível ver a programação.
+        </div>
+        <div class="modal-footer border-0">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
