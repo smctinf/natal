@@ -1,12 +1,11 @@
 body {
-  background-color: #050e1b;
+  background-color: #000A2D;
   color: white;
   overflow-x: hidden;
   font-family: 'Rubik', sans-serif;
 }
 html,
 body {
-  background-image: url("/static/imgs/FUNDO_NATAL_22.png");
   background-attachment: fixed;
   height: 100%;
 }
@@ -45,6 +44,10 @@ body {
   width: 4rem;
   transition: transform 350ms;
 
+
+}
+.nav-link{
+  transition: transform 300ms ease-out;
 }
 .nav-link:hover {
   color: #e6b572;
@@ -79,9 +82,18 @@ canvas {
   position: relative;
   width: 100%;
   height: 100vh;
+  background-image: url("/static/imgs/FUNDO_NATAL_22.png");
   /* padding-top: 6rem; */
 }
-.hero div{
+.hero::before{
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 10vh;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), #000A2D 90%) top;
+  content: "";
+}
+.hero div{ 
   height: 100%;
 }
 .button {
@@ -396,7 +408,7 @@ li .a-footer:hover {
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
-  border: 2px solid white;
+  border: 1px solid white;
   max-width: 60em;
   padding: 1rem;
   margin: auto;
