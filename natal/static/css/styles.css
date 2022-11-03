@@ -6,6 +6,8 @@ body {
 }
 html,
 body {
+  background-image: url("/static/imgs/FUNDO_NATAL_22.png");
+  background-attachment: fixed;
   height: 100%;
 }
 
@@ -76,9 +78,12 @@ canvas {
 .hero {
   position: relative;
   width: 100%;
+  height: 100vh;
   /* padding-top: 6rem; */
 }
-
+.hero div{
+  height: 100%;
+}
 .button {
   padding: 0.6rem 1.3rem;
   font-size: 1.5rem;
@@ -98,8 +103,8 @@ canvas {
 }
 
 .banner {
-  width: 100%;
-  height: 80vh;
+  width: 80%;
+  height: 70vh;  
 }
 
 .absoluteCenter {
