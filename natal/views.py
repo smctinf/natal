@@ -11,6 +11,7 @@ def index(req):
         'eventos': Evento.objects.all(),
         'testemonios': Testemunho.objects.all(),
         'galeria_images': Galeria.objects.all(),
+        # 'texto' :
     }
 
     return render(req, "natal/index.html", context)
