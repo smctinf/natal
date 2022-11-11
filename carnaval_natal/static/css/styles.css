@@ -1,22 +1,30 @@
 body {
-  background-color: #050e1b;
+  background-color: #000A2D;
   color: white;
   overflow-x: hidden;
   font-family: 'Rubik', sans-serif;
 }
 html,
 body {
+  background-attachment: fixed;
   height: 100%;
 }
+
 .navbar {
   color: #e6b572;
+  /* font-family: 'Roboto Slab', serif; */
+  /* color: #383736d8; */
   position: fixed;
   width: 100%;
   z-index: 99;
   font-weight: bold;
   padding: 0.8vh 1vw;
   top: 0;
-  background-color: rgba(5, 14, 27, 0.5);
+  /* background-color: rgba(5, 14, 27, 0.5); */
+  background-color: rgb(5, 14, 27);
+  background: linear-gradient(to top, rgba(0,0,0,0), rgb(5, 14, 27) 65%) bottom;
+
+  /* background-color: #fffffff8; */
   font-size: 1.2rem;
   z-index: 9999;
   height: 6rem;
@@ -36,9 +44,14 @@ body {
   width: 4rem;
   transition: transform 350ms;
 
+
+}
+.nav-link{
+  transition: transform 300ms ease-out;
 }
 .nav-link:hover {
-  color: #fff;
+  color: #e6b572;
+  transform: scale(1.2);
 }
 .logo {
   width: 5rem;
@@ -68,30 +81,43 @@ canvas {
 .hero {
   position: relative;
   width: 100%;
-  padding-top: 6rem;
+  height: 100vh;
+  background-image: url("/static/imgs/FUNDO_NATAL_22.png");
+  /* padding-top: 6rem; */
+  z-index: 99;
 }
-
+.hero::before{
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 10vh;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), #000A2D 90%) top;
+  content: "";
+}
+.hero div{ 
+  height: 100%;
+}
 .button {
   padding: 0.6rem 1.3rem;
   font-size: 1.5rem;
   font-weight: 700;
-  border-radius: 6px;
+  border-radius: 0px;
   color: #cf9c60;
-  border: 2px solid #cf9c60;
+  border: 1px solid #cf9c60;
   background-position:left bottom;
-  background: linear-gradient(to left, rgba(0,0,0,0), #cf9c60 50%) right;
+  background-color: rgba(255, 255, 255, 0);
   background-size: 300%;
   transition: .5s ease-out;
 }
 
-.button:hover {
+.button:hover {  
   color: #fff;
   background-position: left;
 }
 
 .banner {
-  width: 100%;
-  height: 80vh;
+  width: 800px;
+  height: 800px;  
 }
 
 .absoluteCenter {
@@ -137,7 +163,7 @@ canvas {
   padding: 0;
   list-style: none;
   position: absolute;
-  z-index: 1;
+  z-index: 99;
   left: 0;
   width: 100%;
   top: 50%;
@@ -153,10 +179,6 @@ canvas {
   font-weight: 900;
   margin: 0 0.5rem;
 }
-.controls {
-  z-index: 99;
-}
-
 .controls li:hover {
   cursor: pointer;
 }
@@ -383,7 +405,7 @@ li .a-footer:hover {
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
-  border: 2px solid white;
+  border: 1px solid white;
   max-width: 60em;
   padding: 1rem;
   margin: auto;
@@ -427,13 +449,20 @@ li .a-footer:hover {
 
 /* 1360 */
 @media (max-width: 85em) {
-
+  .banner {
+    width: 800px;
+    height: 800px;  
+  }
 }
 
 /* 1200 */
 @media(max-width: 75em) {
-
-
+.hero{
+  height: 90vh;
+}
+.feed img{
+  height: 50vh;
+}
 }
 
 
@@ -462,20 +491,38 @@ li .a-footer:hover {
     align-items: center;
     margin-bottom: 2rem;
   }
+  .feed img{
+    height: 30vh;
+  }
+  .banner {
+    width: 600px;
+    height: 600px;  
+  }
 }
-
-/* 704 */
+/* 768 */
 @media (max-width: 48em) {
   .box-pat{
     width: 7rem ;
   }
+  .banner {
+    width: 500px;
+    height: 500px;  
   }
-
-
+}
 /* 544 */
 @media (max-width: 34em) {
   .slideShow {
     width: 100%;
     height: 50vh;
   }
+  .banner {
+    width: 400px;
+    height: 400px;  
+  }
+
+}
+/* 480 */
+@media (max-width: 30em) {
+
+
 }

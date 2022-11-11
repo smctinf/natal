@@ -1,12 +1,11 @@
 body {
-  background-color: #050e1b;
+  background-color: #000A2D;
   color: white;
   overflow-x: hidden;
   font-family: 'Rubik', sans-serif;
 }
 html,
 body {
-  background-image: url("/static/imgs/FUNDO_NATAL_22.png");
   background-attachment: fixed;
   height: 100%;
 }
@@ -45,6 +44,10 @@ body {
   width: 4rem;
   transition: transform 350ms;
 
+
+}
+.nav-link{
+  transition: transform 300ms ease-out;
 }
 .nav-link:hover {
   color: #e6b572;
@@ -79,9 +82,19 @@ canvas {
   position: relative;
   width: 100%;
   height: 100vh;
+  background-image: url("/static/imgs/FUNDO_NATAL_22.png");
   /* padding-top: 6rem; */
+  z-index: 99;
 }
-.hero div{
+.hero::before{
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 10vh;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), #000A2D 90%) top;
+  content: "";
+}
+.hero div{ 
   height: 100%;
 }
 .button {
@@ -103,8 +116,8 @@ canvas {
 }
 
 .banner {
-  width: 80%;
-  height: 70vh;  
+  width: 650px;
+  height: 650px;  
 }
 
 .absoluteCenter {
@@ -150,7 +163,7 @@ canvas {
   padding: 0;
   list-style: none;
   position: absolute;
-  z-index: 1;
+  z-index: 99;
   left: 0;
   width: 100%;
   top: 50%;
@@ -166,10 +179,6 @@ canvas {
   font-weight: 900;
   margin: 0 0.5rem;
 }
-.controls {
-  z-index: 99;
-}
-
 .controls li:hover {
   cursor: pointer;
 }
@@ -396,7 +405,7 @@ li .a-footer:hover {
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
-  border: 2px solid white;
+  border: 1px solid white;
   max-width: 60em;
   padding: 1rem;
   margin: auto;
@@ -440,13 +449,20 @@ li .a-footer:hover {
 
 /* 1360 */
 @media (max-width: 85em) {
-
+  .banner {
+    width: 800px;
+    height: 800px;  
+  }
 }
 
 /* 1200 */
 @media(max-width: 75em) {
-
-
+.hero{
+  height: 90vh;
+}
+.feed img{
+  height: 50vh;
+}
 }
 
 
@@ -475,20 +491,38 @@ li .a-footer:hover {
     align-items: center;
     margin-bottom: 2rem;
   }
+  .feed img{
+    height: 30vh;
+  }
+  .banner {
+    width: 600px;
+    height: 600px;  
+  }
 }
-
-/* 704 */
+/* 768 */
 @media (max-width: 48em) {
   .box-pat{
     width: 7rem ;
   }
+  .banner {
+    width: 500px;
+    height: 500px;  
   }
-
-
+}
 /* 544 */
 @media (max-width: 34em) {
   .slideShow {
     width: 100%;
     height: 50vh;
   }
+  .banner {
+    width: 400px;
+    height: 400px;  
+  }
+
+}
+/* 480 */
+@media (max-width: 30em) {
+
+
 }
