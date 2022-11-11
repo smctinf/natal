@@ -528,3 +528,8 @@ li .a-footer:hover {
 
 
 }
+
+.text-justify{
+  text-align: justify;
+  text-indent: 30px;
+}
