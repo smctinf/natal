@@ -21,7 +21,7 @@ defer
 
   <div class="hero">    
     <div class="w-100 d-flex pt-3">
-      <img class="banner m-auto" src="/static/imgs/NATAL2022LOGO.png" />      
+      <img class="banner m-auto" src="/static/imgs/NATAL2022LOGO.png" alt="logo natal nova friburgo nova-friburgo 2022 um encanto de natal o espetaculo"/>      
     </div>
   </div>
 
@@ -41,7 +41,7 @@ defer
     </div>
     
     {% for galeria_image in galeria_images %}
-      <div class="slide-item active-slide"><img src="{{galeria_image.image.url}}"></div>
+      <div class="slide-item active-slide"><img src="{{galeria_image.image.url}}" alt="galeria natal nova friburgo nova-friburgo 2022"></div>
     {% endfor %}
 
   </div>
@@ -98,7 +98,7 @@ defer
 
       <div class="slider-item">
         <div class="card-carousel">
-          <img src="{{evento.banner.url}}" alt="" />
+          <img src="{{evento.banner.url}}" alt="eventos natal nova friburgo nova-friburgo 2022" />
           <h3>{{evento.titulo}}</h3>
           <h4>{{evento.data}}</h4>
           <p>{{evento.descricao}}</p>
@@ -128,4 +128,13 @@ defer
     </div>
   </div>
 </div>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q4W62Z5YEG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q4W62Z5YEG');
+</script>
 {% endblock %}
