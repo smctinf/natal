@@ -41,4 +41,6 @@ class Programacao(models.Model):
     local = models.ForeignKey(Local,on_delete=models.PROTECT)
     nome = models.CharField(max_length=256, verbose_name="Nome do evento")
 
+    def __str__(self):
+        return '%s - %s - %s' % (self.hora, self.local, self.nome)
     
