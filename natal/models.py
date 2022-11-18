@@ -21,3 +21,19 @@ class Testemunho(models.Model):
 class Galeria(models.Model):
     image = models.ImageField(upload_to='galerias_imagens', verbose_name="Imagem da galeria")
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+class Local(models.Model):
+    class Meta:
+        verbose_name_plural = "Locais"
+
+    endereco = models.TextField(max_length=256, verbose_name="Endereço do local")
+    link = models.URLField(null=True, verbose_name="Link do google maps para o local")
+
+class Programacao(models.Model):
+    class Meta:
+        verbose_name_plural = "Programação"
+        verbose_name = "Programação"
+
+    hora = models.DateTimeField()
+    local = models.ForeignKey(Local,on_delete=models.PROTECT)
+    nome = models.CharField(max_length=256, verbose_name="Nome do evento")
