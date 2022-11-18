@@ -70,9 +70,8 @@
           <div class="parceiros-box-int">
             {% for parceiro in parceiros%}
             <div class="box-pat">
-              <a target="_blank" href='/{{parceiro.site}}'>
-                <img src="{{parceiro.logo.url}}" alt="{{parceiro.nome}}"/>
-                {{parceiro.site}}</a>
+              <a target="_blank" href='{{parceiro.site}}'>
+                <img src="{{parceiro.logo.url}}" alt="{{parceiro.nome}}"/></a>
             </div>
             {%endfor%}
           </div>

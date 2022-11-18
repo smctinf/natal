@@ -116,8 +116,8 @@ canvas {
 }
 
 .banner {
-  width: 800px;
-  height: 800px;  
+  width: 650px;
+  height: 650px;  
 }
 
 .absoluteCenter {
@@ -142,6 +142,8 @@ canvas {
 }
 
 .slider-container {
+  width: 80%;
+  margin: auto;
   padding: 2rem 3rem;
   overflow: hidden;
   border-radius: 5px;
@@ -189,7 +191,7 @@ canvas {
 .card-carousel {
   text-align: center;
   margin: 0 auto;
-  max-width: 25vw;
+  max-width: 20vw;
   color: #fff;
   border-radius: 5px;
   font-family: sans-serif;
@@ -226,7 +228,7 @@ canvas {
 
 .slideShow {
   position: relative;
-  width: 100%;
+  width: 80%;
   height: 80vh;
   max-width: 100em;
   margin: 0 auto;
@@ -525,4 +527,9 @@ li .a-footer:hover {
 @media (max-width: 30em) {
 
 
+}
+
+.text-justify{
+  text-align: justify;
+  text-indent: 30px;
 }
