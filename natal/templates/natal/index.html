@@ -113,13 +113,42 @@ defer
 </main>
 
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header border-0">          
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content bg-prog-titulo">
+        <div class="modal-header border-0 bg-prog-titulo2">          
+          Programação do Natal 2022
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body text-dark text-center">
-          Ainda não é possível ver a programação.
+        <div class="modal-body text-dark text-center">          
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed bg-prog bg-gradient text-white fw-bolder" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  26 de Novembro
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse border-0" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body border-0">
+                  <div class="progIndex border-0">
+                    <div class="progHora"><b>Hora</b></div> 
+                    <div class="progLocal col"><b>Local</b></div>
+                    <div class="progNome col"><b>Nome</b></div>
+                  </div>
+                  <div class="progItem">
+                    <div class="progHora bg-gradient"><span>18h30</span></div> 
+                    <div class="progLocal col bg-gradient"><span>Local: Prefeitura.</span></div>
+                    <div class="progNome col bg-gradient"><b>Célebres Canções Natalinas com Coro Acrópolis</b></div>
+                  </div>
+                  <div class="progItem">
+                    <div class="progHora bg-gradient"><span>19h00</span></div> 
+                    <div class="progLocal col bg-gradient"><span>Local: Prefeitura.</span></div>
+                    <div class="progNome col bg-gradient"><b>Acender das Luzes</b></div>
+                  </div>                  
+                </div>
+              </div>
+            </div>                      
+          </div>
+          
         </div>
         <div class="modal-footer border-0">
           
@@ -128,6 +157,74 @@ defer
     </div>
   </div>
 </div>
+<style>
+  .progIndex{
+    display: flex;
+    flex-direction: row;
+    text-align: start;
+  }
+  .progIndex .progHora{
+    width: 75px
+  }
+  .progIndex .progLocal{
+    padding-left: 10px;
+  }
+  .progIndex .progNome{
+    padding-left: 10px;
+  }
+  .progItem .progHora{
+    background-color: #034A8E;
+    width: 75px;
+    height: 75px;
+    margin-top: 5px;   
+    color: white; 
+  }
+  .progItem .progLocal{
+    background-color: #034A8E;
+    height: 75px;
+    margin: 5px 10px;
+    color: white; 
+  }
+  .progItem .progNome{
+    background-color: #034A8E;
+    height: 75px;
+    margin-top: 5px;
+    color: white; 
+  }
+  .accordion-body .progItem, .accordion-body .progItem div{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+  }
+  .accordion-body .progItem span, .accordion-body .progItem b{
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+  }
+  .bg-prog-titulo{
+    background-color: #ffffff;    
+  }
+  .bg-prog-titulo2{
+    background-color: #B0874C;
+  }
+  .bg-prog{
+    background-color: #B0874C;
+  }
+  .accordion-button:not(.collapsed){
+    background-color: #B0874C !important;
+  }
+  .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  }
+  .accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    transform: rotate(-180deg);
+  }
+  .accordion-body{
+    background-color: #ffffff; 
+  }
+</style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q4W62Z5YEG"></script>
 <script>
