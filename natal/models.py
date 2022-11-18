@@ -27,8 +27,11 @@ class Local(models.Model):
         verbose_name_plural = "Locais"
 
     endereco = models.TextField(max_length=256, verbose_name="Endereço do local")
-    link = models.URLField(null=True, verbose_name="Link do google maps para o local")
+    link = models.URLField(blank=True, null=True, verbose_name="Link do google maps para o local")
 
+    def __str__(self):
+        return '%s' % (self.endereco)
+        
 class Programacao(models.Model):
     class Meta:
         verbose_name_plural = "Programação"
@@ -37,3 +40,5 @@ class Programacao(models.Model):
     hora = models.DateTimeField()
     local = models.ForeignKey(Local,on_delete=models.PROTECT)
     nome = models.CharField(max_length=256, verbose_name="Nome do evento")
+
+    
