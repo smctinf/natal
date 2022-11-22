@@ -13,9 +13,5 @@ def ajeitaHora(obj):
         
         time_str = localtime(obj.replace(tzinfo=local_tz)).strftime("%H:%M")
 
-        # start_date = local_tz.localize(datetime(2012, 9, 27), is_dst=None)
-        # now_utc = datetime.utcnow().replace(tzinfo=pytz.utc)
-
-        print(time_str)
-        return 'obj-c'
+        return time_str
 
