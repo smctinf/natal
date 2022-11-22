@@ -1,6 +1,6 @@
 {% extends "natal/template.html" %}
 {% block JSTemplate %}
-
+{% load extras %}
 <script
 src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"
 defer
@@ -138,7 +138,7 @@ defer
                   </div>
                   {% for item in p.1 %}
                   <div class="progItem">
-                    <div class="progHora bg-gradient"><span>{{item.hora.time}}</span></div> 
+                    <div class="progHora bg-gradient"><span>{{item.hora|ajeitaHora}}</span></div> 
                     <div class="progLocal col bg-gradient">
                       <span>
                         {{item.local}}                        
