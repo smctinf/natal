@@ -1,6 +1,6 @@
 {% extends "natal/template.html" %}
 {% block JSTemplate %}
-
+{% load extras %}
 <script
 src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"
 defer
@@ -112,7 +112,7 @@ defer
   </div>
 </main>
 
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal fade modal-prog" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content bg-prog-titulo">
         <div class="modal-header border-0 bg-prog-titulo2">          
@@ -138,7 +138,7 @@ defer
                   </div>
                   {% for item in p.1 %}
                   <div class="progItem">
-                    <div class="progHora bg-gradient"><span>{{item.hora.time}}</span></div> 
+                    <div class="progHora bg-gradient"><span>{{item.hora|ajeitaHora}}</span></div> 
                     <div class="progLocal col bg-gradient">
                       <span>
                         {{item.local}}                        
