@@ -372,7 +372,6 @@ li .a-footer:hover {
   padding: 1rem;
 
 }
-
 .direcoes{
   display: flex;
   flex-direction: column;
@@ -448,7 +447,9 @@ li .a-footer:hover {
   background-color: red;
   
 }
-
+/* .modal-prog{
+  margin-top: 20px;
+} */
 /* 1360 */
 @media (max-width: 85em) {
   .banner {
@@ -492,6 +493,8 @@ li .a-footer:hover {
   .info-container{
     align-items: center;
     margin-bottom: 2rem;
+    z-index: 99;
+
   }
   .feed img{
     height: 30vh;
