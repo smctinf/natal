@@ -8,7 +8,7 @@ from natal.models import *
 def index(req):
     import datetime
 
-    programacao_=Programacao.objects.all()
+    programacao_=Programacao.objects.all().order_by('hora')
     datas=programacao_.values('hora')
 
     index=[]
