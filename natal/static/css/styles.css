@@ -230,7 +230,6 @@ canvas {
 
 .slideShow {
   position: relative;
-  width: 80%;
   height: 80vh;
   max-width: 100em;
   margin: 0 auto;
@@ -547,6 +546,10 @@ iframe{
   .banner {
     width: 400px;
     height: 400px;  
+  }
+
+  .controls{
+    display: none;
   }
 
 }

@@ -8,10 +8,6 @@ navbar.style.display = "none"
 nav.className = "navbar navbar-expand-lg" 
 logo.style.display = 'block'
 
-console.log(isClosed)
-console.log(navbar)
-
-
 hamburger.addEventListener('click', ()=>{
     isClosed = !isClosed
     hamburger.className = isClosed ? "navbar-toggler text-white" : "navbar-toggler text-white spin"

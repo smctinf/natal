@@ -25,6 +25,7 @@ def index(req):
                 i[1].append(p)    
         
     # for in
+    print(Galeria.objects.all())
     context = {
         'programacao': programacao,
         'parceiros': Parceiro.objects.all(),

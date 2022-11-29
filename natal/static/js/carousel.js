@@ -1,4 +1,5 @@
 window.onload = () => {
+  document.querySelector('#galeria').querySelectorAll('.slide-item')[0].classList.add('active-slide')
   const backButton = document.querySelector("#backButton");
   const nextButton = document.querySelector("#nextButton");
   const slides = [...document.querySelectorAll(".slide-item")];
