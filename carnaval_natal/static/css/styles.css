@@ -188,6 +188,7 @@ canvas {
 .tns-liveregion {
   display: none;
 }
+
 .card-carousel {
   text-align: center;
   margin: 0 auto;
@@ -535,4 +536,13 @@ li .a-footer:hover {
 .text-justify{
   text-align: justify;
   text-indent: 30px;
+}
+
+.video{
+  z-index: 1000;
+  position: relative;
+}
+
+.customize-controls{
+  display: block;
 }
