@@ -449,7 +449,7 @@ text-align: center;
 }
 .feed img{
   border: 1rem solid #050e1b;
-  width: 25.6vw;
+  width: 30vw;
   height: 60vh;
 }
 #natal-titulo svg g{
@@ -520,11 +520,15 @@ iframe{
 
   }
   .feed img{
-    height: 30vh;
+    height: 60vh;
+    width: 40vw;
   }
   .banner {
     width: 600px;
     height: 600px;  
+  }
+  .papainoel-1{
+    display: none;
   }
 }
 /* 768 */
@@ -536,6 +540,22 @@ iframe{
     width: 500px;
     height: 500px;  
   }
+  .buttons{
+    flex-direction: column;
+  }
+  .feed img{
+    height: 60vh;
+    width: 80vw;
+  }
+
+  .papainoel-3{
+    display: none;
+  }
+
+  .controls{
+    display: none;
+  }
+
 }
 /* 544 */
 @media (max-width: 34em) {
@@ -548,9 +568,7 @@ iframe{
     height: 400px;  
   }
 
-  .controls{
-    display: none;
-  }
+
 
 }
 /* 480 */

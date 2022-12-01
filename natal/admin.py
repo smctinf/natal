@@ -8,4 +8,5 @@ admin.site.register(Testemunho)
 admin.site.register(Galeria)
 admin.site.register(Local)
 admin.site.register(Programacao)
+admin.site.register(Parceiro_Casa_Papai_Noel)
 
