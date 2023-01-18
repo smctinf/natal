@@ -8,6 +8,11 @@ class Parceiro(models.Model):
     logo=models.ImageField(upload_to='parceiros_logos', verbose_name="Imagem para logo do parceiro") 
     site=models.CharField(verbose_name="URL do site do parceiro", max_length=50, null=True)
 
+class Parceiro_Casa_Papai_Noel(models.Model):
+    nome=models.CharField(max_length=30, verbose_name="Nome do parceiro")
+    logo=models.ImageField(upload_to='parceiros_logos', verbose_name="Imagem para logo do parceiro") 
+    site=models.CharField(verbose_name="URL do site do parceiro", max_length=50, null=True)
+
 class Evento(models.Model):
     titulo=models.CharField(max_length=50, verbose_name="Título do evento")
     banner=models.ImageField(upload_to='eventos_banners', verbose_name="Banner para divulgação do evento")

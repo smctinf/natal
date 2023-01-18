@@ -24,15 +24,12 @@ def index(req):
             if str(p.hora.date()) == str(i[0].date()):
                 i[1].append(p)    
         
-    # for in
-    print(Galeria.objects.all())
     context = {
         'programacao': programacao,
         'parceiros': Parceiro.objects.all(),
         'eventos': Evento.objects.all(),
         'testemonios': Testemunho.objects.all(),
         'galeria_images': Galeria.objects.all(),
-        # 'texto' :
     }
 
     return render(req, "natal/index.html", context)
@@ -48,5 +45,7 @@ def sobre(req):
 def casaDoPapaiNoel(req):
     context = {
         'parceiros': Parceiro.objects.all(),
+        'parceiros_casa_do_papai_noel': Parceiro_Casa_Papai_Noel.objects.all(),
+
     }
     return render(req, "natal/casaDoPapaiNoel.html", context)
