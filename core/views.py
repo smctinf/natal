@@ -23,11 +23,13 @@ def carnaval(request):
     today=date.today()
     carnaval=info.primeiro_dia_de_carnaval
     delta=carnaval-today    
-    print(today.strftime("%d/%m/%Y"))
+    # print(today.strftime("%d/%m/%Y"))
+    agenda=Agenda.objects.all().order_by('data')
     context={    
         'info': info,
         'dias': delta.days,
-        'fotos': fotos
+        'fotos': fotos,
+        'agenda': agenda,
     }
     return render(request, 'new/index.html', context)
 
@@ -52,6 +54,13 @@ def agremiacao(request):
         'agremiacoes': agremiacoes
     }
     return render(request, 'new/agremiacao.html', context)
+
+def programacao(request):
+    agenda=Agenda.objects.all().order_by('data')
+    context={
+        'agenda': agenda,
+    }
+    return render(request, 'new/programacao.html', context)
 
 def eventos(request):
     eventos=EventosCarnaval.objects.all()

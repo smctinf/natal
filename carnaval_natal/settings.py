@@ -113,12 +113,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'carnaval_natal/media')
 
-LOGIN_URL='/s/login'
+LOGIN_URL='/admin'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_URL = '/'
-LOGOUT_REDIRECT_URL = '/s/login'
+LOGOUT_REDIRECT_URL = '/'
 
 
 

@@ -80,7 +80,7 @@
                   <li class="active"><a href="/agremiacao">Agremiações</a></li>
                   <li><a href="/eventos">Eventos</a></li>
                   <li><a href="/concursos">Concursos</a></li>
-                  <li><a href="#">Programação</a></li>
+                  <li><a href="/programacao">Programação</a></li>
                </ul>
             </div>
          </div>
@@ -107,17 +107,29 @@
             AGREMIAÇÕES
          </h1>
          <div class="services_section_2">
-            <div class="row">               
-               {% for agremiacao in agremiacoes %}
-                    <div class="col d-flex flex-column px-3">
-                        <img class="mx-auto" style="width: 180px; height: 180px;" src="/static/img/agremiacao/{{agremiacao.img}}" alt="">
-                        <div class="mx-auto mt-2" style="width: 180px;">
-                            <h4>{{agremiacao.escola}}</h4>
-                            <p class="text-break">{{agremiacao.texto}}</p>
-                        </div>
-                    </div>
-                    {% endfor %}
-            </div>
+            <div class="row">
+               <div class="col d-flex">
+                   <section id="programacao">
+                       {% for item in agenda %}
+                       <div class="row mb-4">
+                           <div class="col d-flex">
+                               <div class="data d-flex">
+                                   <div class="m-auto d-flex flex-column pt-2">
+                                       <h1 class="text-center">{{item.data|date:"d/M" }}</h1>
+                                       <h2 class="text-center">{{item.dia}}</h2>
+                                   </div>
+                               </div>
+                               <div class="info d-flex flex-column">
+                                   <h1>{{item.titulo}}</h1>
+                                   <h2>{{item.dia}} ({{item.data|date:"d/M" }}) - {{item.hora}}</h2>
+                                   <h2>{{item.local}}</h2>
+                               </div>
+                           </div>
+                       </div>
+                       {% endfor %}
+                   </section>
+               </div>
+           </div>
          </div>
       </div>
    </div>   
