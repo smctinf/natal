@@ -235,7 +235,7 @@ button {
     height: 100vh !important;
     float: left;
     /* background-color: #085a57; */
-    background-image: url('/static/new/images/bg2.jpg');
+    background-image: url('/static/new/images/bgheader.jpg');
     /* background-image: url(../images/banner-bg.png); */
     height: auto;
     background-size: 100%;
