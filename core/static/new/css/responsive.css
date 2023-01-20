@@ -48,6 +48,7 @@
         display: inline-block;
         margin: 0px 30px;
     }
+    
     .wish-box {
         float: none;
         margin: 0px 30px;
@@ -85,6 +86,7 @@
 /*------------------------------------------------------------------- 599px x 280px ---------------------------------------------------------------------*/
 
 @media only screen and (min-width: 280px) and (max-width: 599px) {
+
     .cart-content-right {
         padding-bottom: 5px;
     }
@@ -103,6 +105,9 @@
     .mean-container .mean-nav ul li a {
         padding: 1em 4%;
         width: 92%;
+    }
+    .readmore_bt{
+        align-self: center;
     }
     .mean-container .mean-nav ul li li a {
         width: 90%;
@@ -213,9 +218,6 @@
         padding-top: 0px;
         font-size: 14px;
     }
-    .readmore_bt {
-        margin-top: 30px;
-    }
     .about_img {
         height: 340px;
     }
@@ -271,6 +273,7 @@
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
+
     .navbar-light .navbar-toggler {
         color: rgba(0, 0, 0, .5);
         border-color: transparent;
@@ -366,9 +369,6 @@
     }
     .about_text {
         font-size: 15px;
-    }
-    .about_img {
-        padding-top: 30px;
     }
     .padding_right_0 {
         padding-right: 15px;
@@ -470,6 +470,9 @@
 }
 
 @media (max-width: 575px) {
+    .header_section{
+        height: auto !important;
+    }
     .navbar-light .navbar-toggler {
         color: rgba(0, 0, 0, .5);
         border-color: transparent;
@@ -564,9 +567,6 @@
     }
     .about_text {
         font-size: 15px;
-    }
-    .about_img {
-        padding-top: 30px;
     }
     .padding_right_0 {
         padding-right: 15px;

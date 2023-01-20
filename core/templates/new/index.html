@@ -42,9 +42,9 @@
 
 <body>
    <!-- header section start -->
-   <div class="header_section">
-      <div class="header_main">
-         <div class="mobile_menu">
+   <header class="header_section">
+      <div class="header_main d-flex flex-clumn">
+         <div class="mobile_menu ">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                <div class="logo_mobile"><a href="/"><img src="/static/new/images/logo1.png"></a></div>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -72,7 +72,7 @@
                </div>
             </nav>
          </div>
-         <div class="container-fluid mb-5">
+         <div class="container-fluid m-auto">
             <div class="logo"><a href="/"><img src="/static/new/images/logo1.png"></a></div>
             <div class="menu_main">
                <ul>
@@ -98,7 +98,7 @@
          </div>
       </div> -->
       <!-- banner section end -->
-   </div>
+   </header>
    <!-- header section end -->
    <!-- services section start -->
    <div class="services_section layout_padding">
@@ -124,9 +124,9 @@
    <!-- about section start -->
    <div class="about_section layout_padding">
       <div class="container-fluid">
-         <div class="row">
+         <div class="row m-0">
             <div class="col-md-6">
-               <div class="about_taital_main">
+               <div class="about_taital_main d-flex flex-column my-5">
                   <h1 class="about_taital">{{info.titulo02}}</h1>
                   <p class="about_text">{{info.texto02}}</p>                  
                   {% if info.texto02 != '' %}
@@ -233,9 +233,14 @@
    <!-- footer section end -->
    <!-- copyright section start -->
    <div class="copyright_section">
+<<<<<<< HEAD
       <div class="container d-flex">
          <img style="height: 200px;" src="/static/new/images/logo_desenvolve.png" alt="">
          <p class="copyright_text my-auto">© SECRETARIA DE CIÊNCIA, TECNOLOGIA, INOVAÇÃO E EDUCAÇÃO PROFISSIONALIZANTE E SUPERIOR.</p>
+=======
+      <div class="container">
+         <p class="copyright_text">© SECRETARIA DE CIÊNCIA, TECNOLOGIA, INOVAÇÃO E EDUCAÇÃO PROFISSIONALIZANTE E SUPERIOR</p>
+>>>>>>> 8e78a102708e2c0ad8c253e03f223710b8fcadbd
       </div>
    </div>
    <!-- copyright section end -->
