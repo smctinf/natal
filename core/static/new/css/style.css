@@ -235,7 +235,7 @@ button {
     height: 100%;
     float: left;
     /* background-color: #085a57; */
-    background-image: url('/static/img/bg.jpg');
+    background-image: url('/static/new/images/bg2.jpg');
     /* background-image: url(../images/banner-bg.png); */
     height: auto;
     background-size: 100%;
@@ -1013,14 +1013,14 @@ button {
 .copyright_section {
     width: 100%;
     float: left;
-    background-color: #000000;
+    background-color: #ffffff;
     height: auto;
 }
 
 .copyright_text {
     width: 100%;
     float: left;
-    color: #ffffff;
+    color: #000000;
     text-align: center;
     font-size: 16px;
     margin-left: 0px;
