@@ -1075,21 +1075,29 @@ button {
 }
 
 #programacao{
-    width: 1156px;
+    /* width: 1156px; */
     margin: auto;
+}
+#programacao .datas .data{
+    margin-left: 10px;
+    margin-right: 10px;
 }
 #programacao .data{
     padding: 30px;
     width: 280px;
-    height: 180px;
+    /* height: 180px; */
     background-color: #5C6EE2;
     color: white;
 }
-#programacao .info{
-    margin-left: 35px;
+#programacao3 .data h1{
+    font-size: 26pt;
+    font-family: 'Londrina Solid', cursive;
+}
+#programacao3 .info{
+    /* margin-left: 35px; */
     padding: 30px;
-    width: 880px;
-    height: 180px;
+    /* width: 880px; */
+    height: auto;
     background-color: #D7518B;
     color: white;
 }
@@ -1101,12 +1109,17 @@ button {
     font-size: 26pt;
     font-family: 'Londrina Solid', cursive;
 }
-#programacao .info h1{
+#programacao3 .info h1{
     font-family: 'Londrina Solid', cursive;
     font-size: 25pt;
     margin-bottom: 25px;
 }
-#programacao .info h2{
-    font-size: 14pt;
+#programacao3 .info h2{
+    font-size: 20pt;
     font-weight: 300;
 }
+
+#programacao3 .info h5{
+    font-size: 20pt;
+}
+

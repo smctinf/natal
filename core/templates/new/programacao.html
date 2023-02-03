@@ -35,6 +35,15 @@
         rel="stylesheet">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
       media="screen">
+
+      <style>
+          @media only screen and (min-width: 100px) and (max-width: 767px) {
+            .datas{
+                flex-direction: column;
+            }
+          }
+
+      </style>
 </head>
 
 <body>
@@ -83,14 +92,14 @@
       </div>
    </div>
    <div class="services_section layout_padding">
-      <div class="container">
-         <h1 class="text-center services_taital">
+      <div class="container d-flex flex-column">
+        <h1 class="text-center services_taital">
             PROGRAMAÇÃO
-         </h1>
+        </h1>
 
-         <div class="row" id="programacao3">
+        <div class="row" id="programacao">
             <div class="col d-flex">            
-                <section class="m-auto d-flex flex-column  justify-content-evenly flex-wrap" style="width:1156px">                                
+                <section class="m-auto d-flex flex-column  justify-content-evenly flex-wrap">                                
                     <h1 class="mt-4">Nossa programação</h1>
                     <small class="mb-5">(Escolha uma data para ver a programação do dia)</small>
                     <div class="d-flex justify-content-evenly w-100 datas">
@@ -108,7 +117,7 @@
         </div>
         <div class="row">
             <div class="col pt-4 d-flex">
-                <section id="programacao">
+                <section id="programacao3" class="w-100">
                     {% for agenda_ in agenda_2 %}
                     <div class="teste" id="{{agenda_.0.0.data|date:'dM'}}">
                         <div class="">                        
@@ -119,9 +128,9 @@
                                 </h1>
                             </div>
                             {% for item in agenda %}                        
-                            <div class="info border-bottom">
+                            <div class="info border-bottom w-100">
                                 <div class="">
-                                    <h1>{{item.titulo}}</h1>
+                                    <h1>{{item.titulo}}</h1>                                    
                                     {% if item.descricao == '' %}
                                     {% else %}                            
                                     <h5 style="margin-top: -25px; margin-bottom: 20px">{{item.descricao}}</h5>
@@ -228,7 +237,7 @@
               closeEventos()
               document.getElementById(valor).style.display='block'                  
               vClick[valor]=true
-              linkTo('#programacao')
+              linkTo('#programacao3')
           }                        
       }
       function closeEventos(){
