@@ -10,6 +10,13 @@ body {
   height: 100%;
 }
 
+main{
+  padding: 16px;
+}
+
+.hero{
+  padding: 0;
+}
 .navbar {
   color: #e6b572;
   /* font-family: 'Roboto Slab', serif; */
@@ -34,7 +41,6 @@ body {
   padding: 0 1vw;
 }
 .showingToo{
-  padding: 0;
   background-color: rgba(5, 14, 27, 0.9);
 }
 .spin{
@@ -43,8 +49,10 @@ body {
 .navbar-toggler{
   width: 4rem;
   transition: transform 350ms;
+}
 
-
+.navbar-toggler:focus{
+  box-shadow: 0 0 0 .15rem
 }
 .nav-link{
   transition: transform 300ms ease-out;
@@ -157,6 +165,7 @@ canvas {
 
 .slider-item {
   border-right: 2px solid #bba81e;
+  padding: 8px;
   position: relative;
 }
 
@@ -192,7 +201,6 @@ canvas {
 .card-carousel {
   text-align: center;
   margin: 0 auto;
-  max-width: 20vw;
   color: #fff;
   border-radius: 5px;
   font-family: sans-serif;
@@ -229,7 +237,6 @@ canvas {
 
 .slideShow {
   position: relative;
-  width: 80%;
   height: 80vh;
   max-width: 100em;
   margin: 0 auto;
@@ -249,6 +256,11 @@ canvas {
 .slide-item img {
   width: 100%;
   height: 100%;
+    /* display: block;
+  max-width:230px;
+  max-height:95px;
+  width: auto;
+  height: auto; */
 }
 #eventos{
   z-index: 999;
@@ -358,8 +370,11 @@ li .a-footer:hover {
 }
 /*casa do papai noel*/
 
+.texto{
+  margin: 16px;
+}
+
 .texto p{
-  text-align: justify;
   margin: 0;
   font-size: 1.7rem;
   font-weight: 300;
@@ -377,6 +392,11 @@ li .a-footer:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 16px;
+}
+.icones div section:nth-child(1){
+  flex-direction: column;
+text-align: center;
 }
 .googleMaps{
   width: 800px;
@@ -441,12 +461,26 @@ li .a-footer:hover {
 }
 .feed img{
   border: 1rem solid #050e1b;
-  width: 25.6vw;
+  width: 30vw;
   height: 60vh;
 }
 #natal-titulo svg g{
   background-color: red;
   
+}
+
+.titulo {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.data {
+  font-size: 1.1rem;
+}
+
+iframe{
+  max-width: 100%;
 }
 /* .modal-prog{
   margin-top: 20px;
@@ -498,11 +532,15 @@ li .a-footer:hover {
 
   }
   .feed img{
-    height: 30vh;
+    height: 60vh;
+    width: 40vw;
   }
   .banner {
     width: 600px;
     height: 600px;  
+  }
+  .papainoel-1{
+    display: none;
   }
 }
 /* 768 */
@@ -514,6 +552,22 @@ li .a-footer:hover {
     width: 500px;
     height: 500px;  
   }
+  .buttons{
+    flex-direction: column;
+  }
+  .feed img{
+    height: 60vh;
+    width: 80vw;
+  }
+
+  .papainoel-3{
+    display: none;
+  }
+
+  .controls{
+    display: none;
+  }
+
 }
 /* 544 */
 @media (max-width: 34em) {
@@ -525,6 +579,8 @@ li .a-footer:hover {
     width: 400px;
     height: 400px;  
   }
+
+
 
 }
 /* 480 */

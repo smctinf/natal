@@ -19,17 +19,29 @@ from .forms import AgremiacaoForm, ConcursosForm, EventosForm, InformacoesForm, 
 
 def carnaval(request):
     info=Informacoes.objects.get(id=1)
-    fotos=Fotos_do_Index.objects.all()
+
+    # agenda=Agenda.objects.all().order_by('data')
+    datas=Agenda.objects.values('data', 'dia').distinct()    
+    
+    agenda_2=[]
+    for i in datas:
+        agenda=[]
+        locais=Agenda.objects.filter(data=i['data']).order_by('local').values('local').distinct()
+        for l in locais:
+            agenda.append(Agenda.objects.filter(data=i['data'], local=l['local']).order_by('hora'))
+        agenda_2.append(agenda)
+        # agenda_.append(Agenda.objects.filter(data=i['data']).order_by('hora').order_by('local'))
+
     today=date.today()
     carnaval=info.primeiro_dia_de_carnaval
     delta=carnaval-today    
-    # print(today.strftime("%d/%m/%Y"))
-    agenda=Agenda.objects.all().order_by('data')
-    context={    
-        'info': info,
+
+    context={
+        'info': info,   
+        'datas': datas,
+        # 'agenda_': agenda_,
+        'agenda_2': agenda_2,
         'dias': delta.days,
-        'fotos': fotos,
-        'agenda': agenda,
     }
     return render(request, 'new/index.html', context)
 
@@ -57,8 +69,21 @@ def agremiacao(request):
 
 def programacao(request):
     agenda=Agenda.objects.all().order_by('data')
+
+    datas=Agenda.objects.values('data', 'dia').distinct()    
+    
+    agenda_2=[]
+    for i in datas:
+        agenda=[]
+        locais=Agenda.objects.filter(data=i['data']).order_by('local').values('local').distinct()
+        for l in locais:
+            agenda.append(Agenda.objects.filter(data=i['data'], local=l['local']).order_by('hora'))
+        agenda_2.append(agenda)
+
     context={
         'agenda': agenda,
+        'agenda_2': agenda_2,
+        'datas': datas,
     }
     return render(request, 'new/programacao.html', context)
 

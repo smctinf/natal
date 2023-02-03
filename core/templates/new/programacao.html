@@ -33,15 +33,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-   <!-- owl stylesheets -->
-   <!-- <link rel="stylesheet" href="/static/new/css/owl.carousel.min.css"> -->
-   <!-- <link rel="stylesheet" href="/static/new/css/owl.theme.default.min.css"> -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
       media="screen">
 </head>
 
 <body>
-   <!-- header section start -->
    <div class="header_section_2">
       <div class="header_main_2">
          <div class="mobile_menu">
@@ -85,27 +81,64 @@
             </div>
          </div>
       </div>
-      <!-- banner section start -->
-      <!-- <div class="banner_section layout_padding">
-         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-               <div class="carousel-item active">
-                  <div class="container">                     
-                     <img src="/static/img/slide/00.png" alt="">
-                  </div>
-               </div>               
-            </div>
-         </div>
-      </div> -->
-      <!-- banner section end -->
    </div>
-   <!-- header section end -->
-   <!-- services section start -->
    <div class="services_section layout_padding">
       <div class="container">
          <h1 class="text-center services_taital">
             PROGRAMAÇÃO
          </h1>
+
+         <div class="row" id="programacao3">
+            <div class="col d-flex">            
+                <section class="m-auto d-flex flex-column  justify-content-evenly flex-wrap" style="width:1156px">                                
+                    <h1 class="mt-4">Nossa programação</h1>
+                    <small class="mb-5">(Escolha uma data para ver a programação do dia)</small>
+                    <div class="d-flex justify-content-evenly w-100 datas">
+                        {% for item in datas %}                    
+                            <div class="data d-flex" onclick="openEvento('{{item.data|date:'dM'}}')">
+                                <div class="m-auto d-flex flex-column pt-2">
+                                    <h1 class="text-center">{{item.data|date:'d/M'}}</h1>
+                                    <h2 class="text-center">{{item.dia}}</h2>
+                                </div>
+                            </div>                    
+                    {% endfor %}        
+                    </div>        
+                </section>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col pt-4 d-flex">
+                <section id="programacao">
+                    {% for agenda_ in agenda_2 %}
+                    <div class="teste" id="{{agenda_.0.0.data|date:'dM'}}">
+                        <div class="">                        
+                            {% for agenda in agenda_ %}
+                            <div class="data w-100 mt-4" style="padding: 10px 30px; background-color: #af308f;">
+                                <h1>
+                                    {{agenda.0.local}}
+                                </h1>
+                            </div>
+                            {% for item in agenda %}                        
+                            <div class="info border-bottom">
+                                <div class="">
+                                    <h1>{{item.titulo}}</h1>
+                                    {% if item.descricao == '' %}
+                                    {% else %}                            
+                                    <h5 style="margin-top: -25px; margin-bottom: 20px">{{item.descricao}}</h5>
+                                    {% endif %}
+                                    <h2>{{item.dia}} ({{item.data|date:"d/M" }}) - {{item.hora}}</h2>
+                                    <h2>{{item.local}}</h2>
+                                </div>
+                            </div>                        
+                            {% endfor %}
+                            {% endfor %}
+                        </div>
+                    </div>                
+                    {% endfor %}
+                </section>
+            </div>
+        </div>
+
          <div class="services_section_2">
             <div class="row">               
                {% for agremiacao in agremiacoes %}
@@ -121,23 +154,14 @@
          </div>
       </div>
    </div>   
-   <!-- services section end -->
-   <!-- about section start -->
-   
-  
-   <!-- footer section start -->
+
    <div class="row bg-footer">
       <div class="col text-dark p-5">
          <div class="row">
             <div class="col d-flex py-5">
                 <section id="contato" class="m-auto" style="width: 1156px;">
-                    <!-- <h1>CONTATO</h1> -->
                     <div class="d-flex">
-                     <!-- <img class="img-fluid mx-auto" src="/static/new/images/logo_desenvolve.png" alt="">                             -->
-                        
-                        <!-- <div class="m-auto d-flex flex-column">
-                           
-                        </div>                         -->
+
                     </div>
                     <div class="row">
                      <div class="col d-flex">
@@ -174,27 +198,54 @@
         </div>
       </div>
    </div>
-   <!-- footer section end -->
-   <!-- copyright section start -->
    <div class="copyright_section">
       <div class="container d-flex">
          <img style="height: 200px;" src="/static/new/images/desenvolve.png" alt="">
          <p class="copyright_text my-auto">© SECRETARIA DE CIÊNCIA, TECNOLOGIA, INOVAÇÃO E EDUCAÇÃO PROFISSIONALIZANTE E SUPERIOR.</p>
       </div>
    </div>
-   <!-- copyright section end -->
-   <!-- Javascript files-->
    <script src="/static/new/js/jquery.min.js"></script>
    <script src="/static/new/js/popper.min.js"></script>
    <script src="/static/new/js/bootstrap.bundle.min.js"></script>
    <script src="/static/new/js/jquery-3.0.0.min.js"></script>
-   <!-- <script src="/static/new/js/plugin.js"></script> -->
-   <!-- sidebar -->
    <script src="/static/new/js/jquery.mCustomScrollbar.concat.min.js"></script>
-   <!-- <script src="/static/new/js/custom.js"></script> -->
-   <!-- javascript -->
-   <!-- <script src="/static/new/js/owl.carousel.js"></script> -->
    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+   <script>
+      let setIndex = 0
+      let vClick={
+          {% for i in datas %}
+              "{{i.data|date:'dM'}}": false,
+          {% endfor %}
+      }
+
+      function openEvento(valor){            
+          if (vClick[valor]){
+              closeEventos()
+              for (const [key, value] of Object.entries(vClick)) {
+                  vClick[key]=false
+              }                
+          }else{
+              closeEventos()
+              document.getElementById(valor).style.display='block'                  
+              vClick[valor]=true
+              linkTo('#programacao')
+          }                        
+      }
+      function closeEventos(){
+          {% for i in datas %}
+              document.getElementById("{{i.data|date:'dM'}}").style.display='none'
+          {% endfor %}
+      }
+
+      function linkTo(value) {
+          window.location.href = value
+      }
+      setIndex = 0
+      
+      window.onload = function teste() {
+          closeEventos()
+      }
+   </script>
 </body>
 
 </html>
