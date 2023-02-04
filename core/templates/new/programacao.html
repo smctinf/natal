@@ -92,25 +92,27 @@
       </div>
    </div>
    <div class="services_section layout_padding">
-      <div class="container d-flex flex-column">
+      <div class="container px-5 d-flex flex-column">
         <h1 class="text-center services_taital">
             PROGRAMAÇÃO
         </h1>
 
         <div class="row" id="programacao">
             <div class="col d-flex">            
-                <section class="m-auto d-flex flex-column  justify-content-evenly flex-wrap">                                
+                <section class="m-auto w-100 d-flex flex-column  justify-content-evenly flex-wrap">                                
                     <h1 class="mt-4">Nossa programação</h1>
                     <small class="mb-5">(Escolha uma data para ver a programação do dia)</small>
-                    <div class="d-flex justify-content-evenly w-100 datas">
+                    <div class="d-flex justify-content-evenly mx-auto datas flex-wrap">
+                       <div class="d-flex justify-content-center mx-auto flex-wrap">
                         {% for item in datas %}                    
-                            <div class="data d-flex" onclick="openEvento('{{item.data|date:'dM'}}')">
-                                <div class="m-auto d-flex flex-column pt-2">
-                                    <h1 class="text-center">{{item.data|date:'d/M'}}</h1>
-                                    <h2 class="text-center">{{item.dia}}</h2>
-                                </div>
-                            </div>                    
-                    {% endfor %}        
+                        <div class="data d-flex mb-3" onclick="openEvento('{{item.data|date:'dM'}}')">
+                            <div class="m-auto d-flex flex-column pt-2">
+                                <h1 class="text-center">{{item.data|date:'d/M'}}</h1>
+                                <h2 class="text-center">{{item.dia}}</h2>
+                            </div>
+                        </div>                    
+                {% endfor %}        
+                       </div>
                     </div>        
                 </section>
             </div>
