@@ -71,19 +71,19 @@ TEMPLATES = [
 WSGI_APPLICATION = 'carnaval_natal.wsgi.application'
 
 DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': db_name,
-            'PORT': '',
-
-            'USER': db_user,
-            'PASSWORD': db_passwd,
-            'HOST': db_host
-        }
         # 'default': {
-        #     'ENGINE': 'django.db.backends.sqlite3',
-        #     'NAME': os.path.join(PROJECT_ROOT, 'yourdatabasename.db'),
+        #     'ENGINE': 'django.db.backends.mysql',
+        #     'NAME': db_name,
+        #     'PORT': '',
+
+        #     'USER': db_user,
+        #     'PASSWORD': db_passwd,
+        #     'HOST': db_host
         # }
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(PROJECT_ROOT, 'yourdatabasename.db'),
+        }
 }
 
 AUTH_PASSWORD_VALIDATORS = [

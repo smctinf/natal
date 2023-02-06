@@ -1081,6 +1081,7 @@ button {
 #programacao .datas .data{
     margin-left: 10px;
     margin-right: 10px;
+    cursor: pointer;
 }
 #programacao .data{
     padding: 30px;
