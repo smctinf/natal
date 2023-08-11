@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Create your models here.
 
 class Parceiro(models.Model):
     nome=models.CharField(max_length=30, verbose_name="Nome do parceiro")
@@ -9,6 +8,9 @@ class Parceiro(models.Model):
     site=models.CharField(verbose_name="URL do site do parceiro", max_length=50, null=True)
 
 class Parceiro_Casa_Papai_Noel(models.Model):
+    class Meta:
+        verbose_name_plural = "Parceiros_Casa_Papai_Noel"
+
     nome=models.CharField(max_length=30, verbose_name="Nome do parceiro")
     logo=models.ImageField(upload_to='parceiros_logos', verbose_name="Imagem para logo do parceiro") 
     site=models.CharField(verbose_name="URL do site do parceiro", max_length=50, null=True)
@@ -39,7 +41,7 @@ class Local(models.Model):
         
 class Programacao(models.Model):
     class Meta:
-        verbose_name_plural = "Programação"
+        verbose_name_plural = "Programações"
         verbose_name = "Programação"
 
     hora = models.DateTimeField()

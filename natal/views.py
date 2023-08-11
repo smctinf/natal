@@ -2,9 +2,6 @@ from django.shortcuts import render
 
 from natal.models import *
 
-# Create your views here.
-
-
 def index(req):
     import datetime
 
@@ -15,12 +12,12 @@ def index(req):
     for data in datas:
         index.append(str(data['hora'].date()))
     index=list(dict.fromkeys(index))
-
+    
     programacao=[]
     for i in index:
         programacao.append([datetime.datetime.strptime(i, '%Y-%m-%d'), []])
-    for p in programacao_:           
-        for i in programacao:            
+    for p in programacao_:    
+        for i in programacao:
             if str(p.hora.date()) == str(i[0].date()):
                 i[1].append(p)    
         
@@ -31,7 +28,7 @@ def index(req):
         'testemonios': Testemunho.objects.all(),
         'galeria_images': Galeria.objects.all(),
     }
-
+    
     return render(req, "natal/index.html", context)
 
 

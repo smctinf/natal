@@ -3,7 +3,6 @@ from pathlib import Path
 from .envvars import load_envars
 
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -13,6 +12,7 @@ db_name = env_vars['db_name']
 db_user = env_vars['db_user']
 db_host=env_vars['db_host']
 db_passwd = env_vars['db_pw']
+sqlite_mode = env_vars['sqlite_mode']
 SECRET_KEY = env_vars['django_secret_key']
 email_user = env_vars['email_sistema']
 email_pass = env_vars['email_pw']
@@ -30,12 +30,14 @@ except:
 
 
 INSTALLED_APPS = [
+    #Stardard apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',   
+    'django.contrib.staticfiles',
+    #Custom apps
     'core',
     'natal'
 ]
@@ -70,21 +72,26 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'carnaval_natal.wsgi.application'
 
-DATABASES = {
-        'default': {
+if sqlite_mode:
+    DATABASES = {
+        'default' : {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(PROJECT_ROOT, 'yourdatabasename.db'),
+        }
+    }
+else:
+    DATABASES = {
+        'default' : {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': db_name,
             'PORT': '',
 
             'USER': db_user,
             'PASSWORD': db_passwd,
-            'HOST': db_host
+            'HOST': db_host,
         }
-        # 'default': {
-        #     'ENGINE': 'django.db.backends.sqlite3',
-        #     'NAME': os.path.join(PROJECT_ROOT, 'yourdatabasename.db'),
-        # }
-}
+    }
+    
 
 AUTH_PASSWORD_VALIDATORS = [
     {
