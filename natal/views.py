@@ -1,5 +1,6 @@
+#Importações de estruturas padrões do Django:
 from django.shortcuts import render
-
+#Importações de estruturas da aplicação:
 from natal.models import *
 
 def index(req):
@@ -16,11 +17,11 @@ def index(req):
     programacao=[]
     for i in index:
         programacao.append([datetime.datetime.strptime(i, '%Y-%m-%d'), []])
-    for p in programacao_:    
+    for p in programacao_:
         for i in programacao:
             if str(p.hora.date()) == str(i[0].date()):
                 i[1].append(p)    
-        
+
     context = {
         'programacao': programacao,
         'parceiros': Parceiro.objects.all(),

@@ -1,4 +1,8 @@
 {% extends "natal/template.html" %}
+{% load static %}
+{% block CSSTemplate %}
+<link rel="stylesheet" src="{% static 'css/natal/index.html'%}">
+{% endblock %}
 {% block JSTemplate %}
 {% load extras %}
 <script
@@ -11,19 +15,28 @@ defer
 <script src="/static/js/carousel.js" defer></script>
 <script src="/static/js/navbar.js" defer></script>
 
-
 {% endblock %}
 {% block Title%}Natal 2023 - Nova Friburgo{% endblock %}
 {% block main %}
 
 <main>
-    <canvas class="neve"></canvas>
+  <canvas class="neve"></canvas>
 
-  <div class="hero">
+  <header class="hero">
     <div class="w-100 d-flex pt-3">
       <img class="banner m-auto" src="/static/imgs/NATAL2023LOGO.png" alt="logo natal nova friburgo nova-friburgo 2023 um encanto de natal o espetaculo"/>
     </div>
-  </div>
+  </header>
+  
+  <section class="d-flex flex-column" style="width: 100vw; height:500px;">
+    <div class="d-flex flex-row align-items-center justify-content-center">
+      <img class="img-fluid" src="{% static 'imgs/02122021-DSC_0055.png'%}" alt="Foto da Bola Ilumitada">
+      <img class="img-fluid" src="{% static 'imgs/02122021-DSC_0055.png'%}" alt="Foto da Bola Ilumitada">
+      <img class="img-fluid" src="{% static 'imgs/02122021-DSC_0055.png'%}" alt="Foto da Bola Ilumitada">
+    <div>
+    <img class="img-fluid" src="{% static 'imgs/cidade_iluminada.png'%}" alt="Cidade Iluminada">
+    <p> {% lorem 4 p random %}</p>
+  </section>
 
   <div class="text-block d-flex flex-column">
     <p style="text-indent: 40px;">O Natal é mágico e envolvente! Esta afirmativa vai muito além da história mundial e das estórias míticas cotidianas. O imaginário poético envolve toda a comunidade e está recheado de sentimentos envolventes... com certeza você tem uma lembrança de Natal guardada em sua memória emotiva, que compõe sonhos com sua família ou amigos!</p>
@@ -56,7 +69,6 @@ defer
   <div class="py-5">
     <div class="row quotes">
       {% for testemonio in testemonios %}
-
       <div class="col testemonio">
         <figure>
           <blockquote class="blockquote">
@@ -76,7 +88,6 @@ defer
     <h2>Eventos</h2>
   </div>
   <div class="slider-container" id="eventos">
-
     <ul
       class="controls"
       id="customize-controls"
