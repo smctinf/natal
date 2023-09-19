@@ -8,6 +8,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 env_vars=load_envars(BASE_DIR)
 
+db_host = env_vars['db_host']
 db_name = env_vars['db_name']
 db_user = env_vars['db_user']
 db_host=env_vars['db_host']
@@ -76,7 +77,7 @@ if sqlite_mode:
     DATABASES = {
         'default' : {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(PROJECT_ROOT, 'yourdatabasename.db'),
+            'NAME': os.path.join(PROJECT_ROOT, f'{db_name}.sqlite3'),
         }
     }
 else:

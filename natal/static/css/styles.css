@@ -1,8 +1,10 @@
 body {
-  background-color: #000A2D;
+  background-color:#A80000;
+  background-image: url("/static/imgs/FUNDO_NATAL_23.png");
   color: white;
   overflow-x: hidden;
   font-family: 'Rubik', sans-serif;
+  /* background: linear-gradient(to top, #A80000 , #770101 90%) bottom; */
 }
 html,
 body {
@@ -10,9 +12,9 @@ body {
   height: 100%;
 }
 
-main{
+/* main{
   padding: 16px;
-}
+} */
 
 .hero{
   padding: 0;
@@ -27,22 +29,22 @@ main{
   font-weight: bold;
   padding: 0.8vh 1vw;
   top: 0;
-  /* background-color: rgba(5, 14, 27, 0.5); */
-  background-color: rgb(5, 14, 27);
-  background: linear-gradient(to top, rgba(0,0,0,0), rgb(5, 14, 27) 65%) bottom;
+  /* background-color: #a800002f; */
+  background-color: rgb(27, 5, 5);
+  background: linear-gradient(to top, rgba(107, 18, 18, 0), rgb(128, 8, 8) 45%) bottom;
 
   /* background-color: #fffffff8; */
   font-size: 1.2rem;
   z-index: 9999;
   height: 6rem;
 }
-.showing{
+/* .showing{
   background-color: rgba(5, 14, 27, .9);
   padding: 0 1vw;
 }
 .showingToo{
   background-color: rgba(5, 14, 27, 0.9);
-}
+} */
 .spin{
   transform: rotate(90deg);
 }
@@ -90,7 +92,7 @@ canvas {
   position: relative;
   width: 100%;
   height: 100vh;
-  background-image: url("/static/imgs/FUNDO_NATAL_22.png");
+  background-image: url("/static/imgs/FUNDO_NATAL_23.png");
   /* padding-top: 6rem; */
   z-index: 99;
 }
@@ -99,7 +101,7 @@ canvas {
   bottom: 0;
   width: 100vw;
   height: 10vh;
-  background: linear-gradient(to bottom, rgba(0,0,0,0), #000A2D 90%) top;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), #770101 90%) top;
   content: "";
 }
 .hero div{ 
