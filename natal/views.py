@@ -4,10 +4,10 @@ from natal.models import *
 
 def index(req):
     import datetime
-
+    
     programacao_=Programacao.objects.all().order_by('hora')
     datas=programacao_.values('hora')
-
+    
     index=[]
     for data in datas:
         index.append(str(data['hora'].date()))
@@ -30,8 +30,7 @@ def index(req):
     }
     
     return render(req, "natal/index.html", context)
-
-
+    
 def sobre(req):
     context = {
         'parceiros': Parceiro.objects.all(),
