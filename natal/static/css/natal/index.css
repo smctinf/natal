@@ -1,0 +1,30 @@
+:root{
+    --margemCidadeIluminada: 7rem;
+}
+
+#cidadeIluminada{
+    height: 95vh;
+    width: calc(100% - 2*var(--margemCidadeIluminada));
+    margin: var(--margemCidadeIluminada);
+}
+#cidadeIluminada div:first-child{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: center;
+}
+#cidadeIluminada div:first-child img{
+    width: 50%;
+}
+#cidadeIluminada div:last-child{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 4rem;
+}
+#cidadeIluminada div:last-child img{
+    width: 45%;
+}
