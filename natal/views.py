@@ -4,7 +4,10 @@ from django.shortcuts import render
 from natal.models import *
 
 def programacao(req):
-    return render(req, "natal/programacao.html")
+    context={
+        'programacao': []
+    }
+    return render(req, "natal/programacao.html", context)
 
 def index(req):
     import datetime

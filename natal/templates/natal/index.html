@@ -20,7 +20,7 @@ defer
 {% block main %}
 
 <main>
-  <!-- <canvas class="neve"></canvas> -->
+  <canvas class="neve"></canvas>
 
   <header class="hero">
     <div class="w-100 d-flex pt-3">
@@ -56,7 +56,7 @@ defer
   <section id="programacao" class="py-5 mb-5">
     <p><strong>De 22 de Novembro de 2023</strong></p>
     <p><strong>Até 23 de Dezembro de 2023</strong></p>
-    <a href="/programacao" style="position: relative;" type="button" data-toggle="modal" data-target="#staticBackdrop  ">
+    <a href="/programacao" style="position: relative; z-index: 10 !important;" type="button" data-toggle="modal" data-target="#staticBackdrop  ">
       <img class="" src="{% static 'imgs/engrenagem-button.png' %}" style="position: absolute; top: -73px; left: -18px; width: 438px; -webkit-transform: scaleX(-1); transform: scaleX(-1);" alt="engrenagens" >
       Programação
       <img class="" src="{% static 'imgs/engrenagem-button.png' %}" style="position: absolute; bottom: -40px; right: -10px; width: 208px; -webkit-transform: scaleY(-1); transform: scaleY(-1);" alt="engrenagens" >

@@ -96,7 +96,7 @@ h2{
 canvas {
   display: block;
   position: absolute;
-  z-index: 9;
+  z-index: 2;
   width: 100%;
 }
 .album {
@@ -294,7 +294,7 @@ canvas {
 .sobre section {
   display: grid;
   grid-template-rows: repeat(2);
-  /* row-gap: 5vh; */
+  row-gap: 5vh;
 }
 .sobre section .text-area {
   display: grid;
@@ -459,7 +459,7 @@ text-align: center;
   height: 85vh;
   position: relative;
   background-attachment: fixed;
-  background-image:  url("/static/imgs/01012012-DSCN0060.jpg"); 
+  background-image:  url("/static/imgs/01012012-DSCN0060 -bkp.jpg"); 
   background-size: cover;
   background-repeat: no-repeat;
 }
