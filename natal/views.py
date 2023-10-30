@@ -3,6 +3,9 @@ from django.shortcuts import render
 #Importações de estruturas da aplicação:
 from natal.models import *
 
+def programacao(req):
+    return render(req, "natal/programacao.html")
+
 def index(req):
     import datetime
     
