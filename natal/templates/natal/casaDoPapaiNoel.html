@@ -1,7 +1,8 @@
 {% extends "natal/template.html" %}
+{% load static %}
 {% block JSTemplate %}
 <script src="/static/js/vara.min.js"></script>
-<!-- <script src="/static/js/title.js"></script> -->
+<script src="/static/js/title.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
@@ -16,7 +17,7 @@
 
   <div class="natal-hero">
     <div id="banner-casa">
-    <!-- <div id="natal-titulo"></div> -->
+    <div id="natal-titulo"></div>
     </div>
     <div class="feed">
       <img
@@ -61,8 +62,9 @@
           <p style="text-indent: 40px;">O espaço vai funcionar até o dia 08 de janeiro, com dias e horários a serem confirmados em breve!</p>
           <p class="mt-3" style="text-indent: 40px;">Os visitantes poderão tirar fotos e ver o Papai Noel de perto, num espaço com acessibilidade. A Casa do Papai Noel ficará instalada no Centro de Atendimento ao Turista, na Praça Dermeval Barbosa Moreira, no Centro. A entrada é gratuita.</p> 
         </div>
-
-    <div class="icones">
+    
+    <img src="{% static 'imgs/programacao.png' %}" alt="programacao datas e horarios">
+    <!-- <div class="icones">
       <div class="d-flex flex-column">
       <section>
         <img src="/static/imgs/calendar.svg" alt="" />
@@ -80,7 +82,7 @@
       <section id="dolar-dolar">
         <img src="/static/imgs/dolar.svg" alt="" /><span>Entrada Franca</span>
       </section>
-    </div>
+    </div> -->
     </div>
 
     <div class="direcoes">
