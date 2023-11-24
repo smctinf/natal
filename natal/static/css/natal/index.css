@@ -47,12 +47,20 @@
     margin: 140px auto 0px auto;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-    font-size: 40pt;
-    font-weight: 400;
-    color: #FFEB9A;
-    height: 80px;
-    border: 2.5px solid #FFEB9A;
-    width: 390px;
+    /* font-size: 40pt; */
+    /* font-weight: 400; */
+    /* color: #FFEB9A; */
+    /* height: 80px; */
+    /* border: 2.5px solid #FFEB9A; */
+    width: 490px;
+
+}
+#programacao a img{
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+#programacao a:hover img{
+    filter: grayscale(0%);
 }
 .progIndex{
     display: flex;
