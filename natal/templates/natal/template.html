@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  {% load static %}
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -79,25 +80,9 @@
     </nav>
 
     {% block main %} {% endblock %}
-    <footer class="container py-5">
-
-      <div class="parceiros">
-        <h2>Parceiros</h2>
-        <div class="py-3 parceiros-box-ext">
-          <div class="parceiros-box-int">
-            {% for parceiro in parceiros%}
-            <div class="box-pat">
-              <a target="_blank" href='{{parceiro.site}}'>
-                <img src="{{parceiro.logo.url}}" alt="{{parceiro.nome}}"/></a>
-            </div>
-            {%endfor%}
-          </div>
-        </div>
-      </div>
-
-      <hr />
-
-      <div class="footer-inf py-5">
+    <footer class="container-fluid pt-5 m-0 p-0" >
+        <img class="m-0 p-0 img-fluid" src="{% static 'imgs/LOGOTIPOS.png' %}" alt="">
+      <div class="footer-inf py-5" style="background-color: black;">
         <div class="info-container">
           <a href="https://www.pmnf.rj.gov.br/site/" target="_blank">
             <img src="/static/imgs/logo_horizontal_branco.webp" alt="" />
